@@ -219,5 +219,7 @@ fisher.test(table1)
 The p-value on this chart is exactly the same as it was on the previous one. Similarly, because the p-value is 0, we will reject the null hypothesis. As a result, we shall draw the conclusion that treatment type and infection state are significantly correlated. We obtained a p-value of 0.000000000232 from the Fisher exact test, which is consistent with the results of the Chi-squared test.
 
 
-
 # Overall Results and Conclusions
+
+
+In result, there are considerable differences in the COVID vaccine's efficacy among various demographic groupings. The percentage of females who contracted COVID-19 was much lower in those who received the vaccine than in those who received a placebo. This finding was verified (p < 0.001) by the Fisher exact test and the Chi-squared test. In comparison to those who received a placebo, members of the LGBTQ subgroup exhibited a greater percentage of COVID-19 symptoms in those who received the vaccine. This unexpected outcome was validated by both statistical tests (p < 0.001). Addicts who received the vaccination had a greater risk of contracting COVID-19, much like the LGBTQ subgroup (p < 0.001).Thus, we reject the null hypothesis that the COVID vaccine is equally efficacious for individuals in different subgroups based on the statistical tests performed for each grouping.

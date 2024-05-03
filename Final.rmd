@@ -139,9 +139,85 @@ The LGBTQ placebo group experienced 15.38% of symptoms, however the vaccinated g
 ## Inferental Results 
 
 
+```{r}
+chisq.test(table1)
+```
 
+
+```{r}
+chisq.test(table1)
+chisqtestGC(table1)
+fisher.test(table1)
+```
+
+
+Since the p-value is zero, we can rule out the null hypothesis and come to the conclusion that there is a meaningful relationship between the type of treatment and the state of infection. The type of treatment is associated to contracting the virus, regardless of whether the recipient received the vaccine or a placebo. We are rejecting the null hypothesis based on the chisq test, which indicates that the p-value for the LGBTQ group is 0.0000006668. This indicates that there is an effect between the COVID vaccination and the LGBTQ subgroup.  
 
 ## Druggies
+
+## Introduction 
+$H_o$ : there is no difference in of COVID921 vaccine within druggies 
+
+$H_a$ : there is no difference in the COVID921 vaccine within druggies
+
+## Methods 
+
+We will be using the Cat~cat helper file to guide me 
+
+
+## Graphical Descriptive Results 
+
+```{r}
+levels(FinalData$Drugusers=="yes")
+```
+
+```{r}
+dataD=filter(FinalData,DrugUser=="yes")
+barchartGC(~infected +treatment, data=dataD)
+```
+
+```{r}
+barchartGC(~infected + treatment, data=dataD, type= "percent")
+```
+
+This graph demonstrates that among the drug user group that contracted COVID, those who received the vaccine had more symptoms than those who received a placebo, but there was no difference between the vaccinated and unvaccinated groups in the drug user group that did not contract COVID.
+
+
+## Numerical 
+
+```{r}
+table1 <- xtabs (~infected + treatment,data=dataD)
+rowPerc(table1)
+```
+
+
+```{r}
+colPerc(table1)
+```
+
+
+According to the data in this table, of the druggies group that contracted COVID-19, 11.67% of those who were not vaccinated and 88.33% of those who were vaccinated reported having symptoms. Additionally, it demonstrates that 3.06% of the vaccinated group developed COVID symptoms, and 0.4% of the druggies placebo group had COVID symptoms.
+
+
+## Inferential Results 
+
+
+```{r}
+chisq.test(table1)
+```
+
+```{r}
+chisqtestGC(table1)
+```
+
+```{r}
+chisq.test(table1)
+chisqtestGC(table1)
+fisher.test(table1)
+```
+
+The p-value on this chart is exactly the same as it was on the previous one. Similarly, because the p-value is 0, we will reject the null hypothesis. As a result, we shall draw the conclusion that treatment type and infection state are significantly correlated. We obtained a p-value of 0.000000000232 from the Fisher exact test, which is consistent with the results of the Chi-squared test.
+
 
 
 # Overall Results and Conclusions

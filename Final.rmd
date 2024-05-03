@@ -34,10 +34,31 @@ $H_a$: There is a difference in the effectiveness of the covid 921 vaccine in fe
 The variables in this study: Males-categorical, Females-categorical, LGBT-categorical, Druggies, categorical. We will be using the Cat~Cat helper file.
 
 
+
 ## Males
 
 
+
+## Graphical Results 
+
+
+
 ## Females
+
+```{r}
+dataF = filter(FinalData,sex=="F")
+barchartGC(~infected + treatment, data=dataF)
+```
+
+```{r}
+barchartGC(~infected + treatment, data=dataF, type= "percent")
+```
+
+This graph shows us that mostly all the females that have contracted COVID, the females that received the vaccince expereinced less symptoms than those who have received the placebo. There is a big difference between those who have been vaccinated and not vaccinated. 
+
+
+## Numerical Descriptive
+
 
 
 ## LGBTQ

@@ -76,9 +76,68 @@ The information above represents that the vaccine has a lower infection rate com
 
 ## Inferential Results 
 
+```{r}
+chisq.test(table1)
+```
 
+
+```{r}
+chisq.test(table1)
+chisqtestGC(table1)
+fisher.test(table1)
+```
+
+The P-value is 0.0002732 for chi-squared test and there is a slight connection within the infected and treament for the female subgroup.
+
+On the fisher exact test we have gotten the p-value of 0.0002162,it indicates the same of the chi-squared test. 
 
 ## LGBTQ
+
+## Introduction 
+
+$H_o$ : there is no difference in effectiveness of the covid vaccine between LGBTQ. 
+
+
+$H_a$ : there is a difference in the effectiveness of the covid vaccine between LGBTQ
+
+## Methods 
+
+I will be using the cat_Cat rmd file as guidence
+
+## Graphical Descriptive results 
+
+```{r}
+levels(FinalData$LGBTQ)
+```
+
+```{r}
+dataG= filter(FinalData,LGBTQ=="gay")
+barchartGC(~infected + treatment,data=dataG)
+```
+
+
+```{r}
+barchart(~infected + treatment, data=dataG, type= "percent")
+```
+
+The vaccine and placebo differ significantly from one another, as this graphic demonstrates. Those who got the vaccination contracted COVID-19 at a higher rate than those who received a placebo. This graph demonstrates that among the LGBTQ subgroup, those who were infected with the COVID-19 virus and got vaccinations showed noticeably greater symptoms than those who did not. There was no difference observed between those who were vaccinated and those who were not, and who did not contract COVID.
+
+## Numerical Results 
+
+```{r}
+table1 <- xtabs(~infected + treatment, data=dataG)
+rowPerc(table1)
+```
+
+```{r}
+colPerc(table1)
+```
+
+The LGBTQ placebo group experienced 15.38% of symptoms, however the vaccinated group experienced 84.62% of symptoms, as this table illustrates. Additionally, this graph demonstrates that whilst 3.54% of the vaccinated group contracted COVID, only 0.66% of the LGBTQ group receiving the placebo actually had COVID.
+
+
+## Inferental Results 
+
 
 
 

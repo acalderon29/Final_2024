@@ -59,6 +59,23 @@ This graph shows us that mostly all the females that have contracted COVID, the 
 
 ## Numerical Descriptive
 
+```{r}
+table1 <- xtabs(~infected+ treatment, data=dataF)
+rowPerc(table1)
+
+```
+
+
+```{r}
+colPerc(table1)
+```
+
+
+The information above represents that the vaccine has a lower infection rate compared to the placebo. The vaccination has a slightly higher rate of treatment success among individuals infected; the difference between the vaccine and placebo is.67. According to the information in this table, 60% of the female COVID-19 infected group who were not vaccinated showed symptoms, compared to 40% of the female group who received vaccinations. Furthermore, data indicates that 2.04% of the female placebo group and 1.37% of the vaccinated group respectively had COVID infections.
+
+
+## Inferential Results 
+
 
 
 ## LGBTQ
